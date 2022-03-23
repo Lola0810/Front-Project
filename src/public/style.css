@@ -47,8 +47,7 @@ html, body {
 
 /* HEADER */
 header {
-    position: absolute;
-    top: 0;
+    position: relative;
 
     width: 100%;
     z-index: 1;
@@ -106,9 +105,10 @@ header>nav>ul>a>li {
 /* HOME */
 .home>.wave__1 {
     background: url(../../public/images/home_wave_1.svg), center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    width: 94em;
+    width: 79%;
     height: 40em;
 
     position: absolute;
@@ -128,6 +128,78 @@ header>nav>ul>a>li {
     left: 0px;
 }
 
+.home>div:not(.wave__1):not(.wave__2) {
+    position: relative;
+}
+
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 5em;
+}
+
+.presentation>.front__image {
+    background: url(../../public/images/software-engineer.svg);
+    background-size: cover;
+
+    width: 37em;
+    height: 33.5em;
+}
+
+.presentation>.left {
+    margin-right: 7em;
+    margin-top: -1em;
+}
+
+.presentation>.left>.title {
+    font-size: 49px;
+    color: var(--main);
+    font-family: 'montserrat-bold', sans-serif;
+    margin-bottom: 1em;
+}
+
+.presentation>.left>.description {
+    width: 23em;
+ 
+    color: var(--text_color);
+    font-family: "montserrat-regular", sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.presentation>.left>button {
+    border-radius: 13px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.presentation>.left>.create {
+    background-color: var(--main);
+    border: 1px solid var(--main);
+
+    font-family: 'montserrat-bold', sans-serif;
+    color: var(--black);
+
+    padding: 12px 31px 12px 31px;
+    margin-right: 2em;
+    margin-top: 3em;
+}
+
+.presentation>.left>.join {
+    border-style: solid;
+    border-color: var(--secondary);
+    background: none;
+
+    color: var(--secondary);
+    font-family: 'montserrat-medium', sans-serif;
+
+    padding: 12px 28px 12px 28px;
+}
+
+/*
 .home>.title {
     margin-top: 32vh;
     margin-left: 7em;
@@ -140,25 +212,12 @@ header>nav>ul>a>li {
 
 .home>.description {
     width: 23em;
-    margin-left: 36vh;
-    margin-top: 2em;
-    position: relative;
-    
+ 
     color: var(--text_color);
     font-family: "montserrat-regular", sans-serif;
     font-size: 21px;
 }
 
-.home>.front__image {
-    background: url(../../public/images/software-engineer.svg);
-    background-size: cover;
-
-    width: 37em;
-    height: 33.5em;
-    margin-top: -20em;
-    margin-right: 16em;
-    float: right;
-}
 
 .home>.create {
     background-color: var(--main);
@@ -250,15 +309,33 @@ header>nav>ul>a>li {
     font-family: 'montserrat-bold', sans-serif;
     border-radius: 20px;
     position: relative;
+}*/
+
+.deeper__background>.subtitle>h2 {
+    background: var(--text_color_2);
+    font-family: 'montserrat-bold', sans-serif;
+    width: fit-content;
+
+    padding: 11px 24px;
+    border-radius: 12px;
+    position: relative;
 }
 
-.home>.pinksubtitle__1 {
-
+.deeper__background>.subtitle.pink>h2 {
+    background: var(--secondary);
 }
 
-.home>.pinksutitle__2 {
-    
+.deeper__background>.subtitle.green>h2 {
+    background: var(--main);
 }
+
+.deeper__background>.subtitle>h2:last-child {
+    left: 23px;
+    top: -8px;
+}
+
+/* pour le subtitle à droite et l'image à gauche je t'engage à reprendre
+la même méthode que pour la presentation (le display flex) */
 
 /* HOME */
 
@@ -275,5 +352,7 @@ footer {
     width: 100%;
     padding: 28px 10px;
     text-align: center;
+
+    display: none;
 }
 /* FOOTER */
