@@ -57,9 +57,11 @@ header>nav {
 }
 header>nav>ul {
     list-style: none;
+    margin: 3em 0;
 }
 header>nav>ul>a {
     text-decoration: none;
+    margin: 38px 0px 38px 46px;
 }
 
 header>nav>ul>a:hover>li {
@@ -98,7 +100,6 @@ header>nav>ul>a>li {
     font-size: 23px;
     position: relative;
     font-family:'Segoe UI', sans-serif;
-    margin: 38px 0px 38px 46px;
 }
 /* HEADER */
 
@@ -174,11 +175,12 @@ header>nav>ul>a>li {
     border-radius: 13px;
     cursor: pointer;
     font-size: 20px;
+    transition: all .3s ease;
 }
 
 .presentation>.left>.create {
     background-color: var(--main);
-    border: 1px solid var(--main);
+    border: 2px solid var(--main);
 
     font-family: 'montserrat-bold', sans-serif;
     color: var(--black);
@@ -186,6 +188,10 @@ header>nav>ul>a>li {
     padding: 12px 31px 12px 31px;
     margin-right: 2em;
     margin-top: 3em;
+}
+
+.presentation>.left>.create:hover {
+    background-color: #b3cb8e;
 }
 
 .presentation>.left>.join {
@@ -199,117 +205,48 @@ header>nav>ul>a>li {
     padding: 12px 28px 12px 28px;
 }
 
-/*
-.home>.title {
-    margin-top: 32vh;
-    margin-left: 7em;
-    position: relative;
-
-    font-size: 49px;
-    color: var(--main);
-    font-family: 'montserrat-bold', sans-serif;
-}
-
-.home>.description {
-    width: 23em;
- 
-    color: var(--text_color);
-    font-family: "montserrat-regular", sans-serif;
-    font-size: 21px;
-}
-
-
-.home>.create {
-    background-color: var(--main);
-    margin-left: 17em;
-    margin-top: 49px;
-
-    font-family: 'montserrat-bold', sans-serif;
+.presentation>.left>.join:hover {
+    background: var(--secondary);
     color: var(--black);
-    font-size: 20px;
-
-    padding: 12px 31px 12px 31px;
-    border-radius: 13px;
 }
 
-.home>.join {
-    border-style: solid;
-    border-color: var(--secondary);
-    background: none;
-    color: var(--secondary);
-    padding: 12px 28px 12px 28px;
-    margin-left: 41px;
-    font-size: 20px;
-    font-family: 'montserrat-medium', sans-serif;
-    border-radius: 13px;
+.goal {
+    margin-top: 46ch;
+    margin-left: 5em;
+    margin-bottom: 11em;
 }
 
-.home>.goal__title {
-    font-size: 49px;
+.goal>.title {
     color: var(--main);
     font-family: 'montserrat-bold', sans-serif;
+    font-size: 42px;
+
     position: relative;
-    top: 65vh;
-    text-align: left;
-    right: -3em;
-    width: 12em;
+    padding-bottom: 1vh;
 }
 
-.home>.goal__title::before {
-    content: '';
-    display: block;
-    background: var(--main);
-    width: 29vh;
-    height: 5px;
+.goal>.title:before {
+    content: "";
+    width: 10%;
+    height: 6px;
+
+    background-color: var(--main);
     position: absolute;
-    margin: 0 auto;
-    top: 9vh;
-    left: 29px;
-    
+    bottom: -7px;
+    left: 37px;
 }
-
-.home>.goal__description {
-    width: 37em;
+ 
+.goal>.description {
+    font-size: 20px;
     color: var(--text_color);
-    position: relative;
-    left: 7em;
-    font-size: 21px;
-    top: 33em;
+    width: min(59ch, 92%);
+    margin-top: 3em;
+    text-align: justify;
 }
 
-.home>.down__main {
-    width: 100%;
-    height: 92em;
-    background-color: var(--background_color_2);
-    z-index: 1;
-    margin-top: 28em;
+.deeper__background {
+    background: var(--background_color_2);
 }
-
-.home>.greensubtitle__1 {
-    font-size: 33px;
-    color: var(--black);
-    top: -32em;
-    left: 104px;
-    background-color: var(--main);
-    margin: 10vh 151vh 10vh 10vh;
-    padding: 8px 0px 8px 18px;
-    font-family: 'montserrat-bold', sans-serif;
-    border-radius: 20px;
-    position: relative;
-}
-
-.home>.greensubtitle__2 {
-    font-size: 33px;
-    color: var(--black);
-    top: -35em;
-    left: 114px;
-    background-color: var(--main);
-    margin: 10vh 140vh 10vh 10vh;
-    padding: 8px 0px 8px 18px;
-    font-family: 'montserrat-bold', sans-serif;
-    border-radius: 20px;
-    position: relative;
-}*/
 
 .deeper__background>.subtitle>h2 {
     background: var(--text_color_2);
@@ -356,3 +293,30 @@ footer {
     display: none;
 }
 /* FOOTER */
+
+/* RESPONSIVE */
+@media screen and (max-width: 1205px) {
+    .presentation>.left {
+        margin-right: unset;
+    }
+}
+@media screen and (max-width: 1091px) {
+    .presentation {
+        margin-top: 8em;
+    }
+    .presentation>.front__image {
+        margin-top: 6em;
+    }
+    .home>.wave__2 {
+        top: 69em;
+    }
+    .goal {
+        margin-top: 32ch;
+    }
+}
+@media screen and (max-width: 991px) {
+    .goal {
+        margin-left: 3em;
+    }
+}
+/* END RESPONSIVE */
