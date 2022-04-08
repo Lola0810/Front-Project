@@ -39,14 +39,22 @@ export default class Home extends Component {
                 
                 <div className="deeper__background">
 
-                    <div className="subtitle green">
-                        <h2>Bats toi avec tes amis</h2>
-                        <h2>pour être le premier à finir !</h2>
+                    <div className="field">
+                        <div className="empty__image" />
+
+                        <div className="subtitle green">
+                            <h2>Bats toi avec tes amis</h2>
+                            <h2>pour être le premier à finir !</h2>
+                        </div>
                     </div>
 
-                    <div className="subtitle pink">
-                        <h2>Essaie de les frainer</h2>
-                        <h2>le plus possible !</h2>
+                    <div className="field">
+                        <div className="empty__image" />
+                        
+                        <div className="subtitle pink">
+                            <h2>Essaie de les frainer</h2>
+                            <h2>le plus possible !</h2>
+                        </div>
                     </div>
 
                 </div>

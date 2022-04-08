@@ -212,7 +212,7 @@ header>nav>ul>a>li {
 
 .goal {
     margin-top: 46ch;
-    margin-left: 5em;
+    margin-left: 8em;
     margin-bottom: 11em;
 }
 
@@ -246,9 +246,14 @@ header>nav>ul>a>li {
 
 .deeper__background {
     background: var(--background_color_2);
+    padding: 1em;
 }
 
-.deeper__background>.subtitle>h2 {
+.deeper__background>.field>.subtitle {
+    margin-top: 7em;
+}
+
+.deeper__background>.field>.subtitle>h2 {
     background: var(--text_color_2);
     font-family: 'montserrat-bold', sans-serif;
     width: fit-content;
@@ -258,17 +263,44 @@ header>nav>ul>a>li {
     position: relative;
 }
 
-.deeper__background>.subtitle.pink>h2 {
+.deeper__background>.field>.subtitle.pink>h2 {
     background: var(--secondary);
 }
 
-.deeper__background>.subtitle.green>h2 {
+.deeper__background>.field>.subtitle.green>h2 {
     background: var(--main);
 }
 
-.deeper__background>.subtitle>h2:last-child {
+.deeper__background>.field>.subtitle>h2:last-child {
     left: 23px;
     top: -8px;
+}
+
+.deeper__background>.field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    position: relative;
+    margin: 7em 0;
+}
+
+.deeper__background>.field>.empty__image {
+    width: 30em;
+    height: 20em;
+
+    border-radius: 20px;
+    margin-right: 9em;
+    background-color: var(--background_color);
+}
+
+.deeper__background>.field:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.deeper__background>.field:nth-child(odd)>.empty__image {
+    margin-left: 9em;
+    margin-right: 0;
 }
 
 /* pour le subtitle à droite et l'image à gauche je t'engage à reprendre
@@ -282,15 +314,9 @@ footer {
     font-size: 16px;
     font-family: 'montserrat-medium', sans-serif;
     color: var(--text_color);
-    
-    position: absolute;
-    bottom: 0;
 
-    width: 100%;
     padding: 28px 10px;
     text-align: center;
-
-    display: none;
 }
 /* FOOTER */
 
