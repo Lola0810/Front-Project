@@ -5,6 +5,11 @@ import NavBar from './components/NavBar';
 
 // routes
 import Home from './Home';
+import Game from './Game';
+
+// member area
+import Login from "./memberArea/Login";
+import Register from "./memberArea/Register";
 
 
 export default class Layout extends Component {
@@ -19,6 +24,11 @@ export default class Layout extends Component {
         <main>
           <Routes>
             <Route exact path="/" element={<Home />} />
+
+            <Route path="/jouer" element={<Game />} />
+
+            <Route path="/connexion" element={<Login />} />
+            <Route path="/inscription" element={<Register />} />
           </Routes>
         </main>
 
