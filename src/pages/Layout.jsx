@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from './components/NavBar';
 
 // routes
-import Home from './Home';
-import Game from './Game';
+import Home from "./Home";
+import Game from "./Game";
 
 // member area
 import Login from "./memberArea/Login";
@@ -25,7 +25,7 @@ export default class Layout extends Component {
           <Routes>
             <Route exact path="/" element={<Home />} />
 
-            <Route path="/jouer" element={<Game />} />
+            <Route path="/:id" element={<Game />} />
 
             <Route path="/connexion" element={<Login />} />
             <Route path="/inscription" element={<Register />} />

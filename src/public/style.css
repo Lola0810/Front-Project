@@ -31,6 +31,21 @@
 }
 /* COLORS */
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background_color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main);
+    border-radius: 20px;
+}
+/* END SCROLLBAR */
+
 /* MAIN */
 *, *::before, *::after {
     outline: none;
@@ -428,6 +443,173 @@ la même méthode que pour la presentation (le display flex) */
     background-color: var(--secondary);
 }
 /* END MEMBER AREA */
+
+/* GAME */
+.game__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    place-items: center;
+}
+
+.game__section>.middle__box {
+    border-radius: 15px;
+    background-color: var(--background_color_2);
+    box-shadow: 0 3px 16px #1010105e;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: 3em;
+}
+
+.game__section>.middle__box>.right {
+    position: relative;
+    padding-top: 8em;
+    width: calc(100% - 26%);
+}
+
+.game__section>.middle__box>.right>.left__button {
+    padding: 13px 16px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'montserrat-bold', sans-serif;
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+
+    cursor: pointer;
+    
+    position: absolute;
+    right: 28px;
+    top: 24px;
+}
+
+.game__section>.middle__box>.right>h1 {
+    text-align: center;
+    color: white;
+    font-size: 31px;
+    font-family: 'montserrat-thin', sans-serif;
+}
+
+.game__section>.middle__box>.right>h1>span {
+    font-family: 'montserrat-bold', sans-serif;
+}
+
+.game__section>.middle__box>.right>.middle {
+    margin: 3em 0;
+    text-align: center;
+
+}
+
+.game__section>.middle__box>.right>.middle>button {
+    padding: 16px 21px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: 'montserrat-bold', sans-serif;
+
+    border: none;
+    background-color: var(--main);
+    color: var(--background_color_2);
+
+    cursor: pointer;
+}
+
+.game__section>.middle__box>.right>.users {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: -13px 6em 18px;
+}
+
+.game__section>.middle__box>.right>.users>.user {
+    margin: 1em 2em;
+}
+
+.game__section>.middle__box>.right>.users>.user>img {
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 3px 16px #1010105e;
+}
+
+.game__section>.middle__box>.right>.users>.user>h4 {
+    text-align: center;
+    margin-top: 8px;
+    color: var(--text_color);
+    font-family: 'montserrat-thin', sans-serif;
+}
+
+.game__section>.middle__box>.left {
+    background-color: var(--footer_color);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 26%;
+
+    padding-bottom: 1em;
+}
+
+.game__section>.middle__box>.left>.top {
+    margin: 2em;
+}
+
+.game__section>.middle__box>.left>.top>h1 {
+    color: white;
+    font-family: 'montserrat-bold', sans-serif;
+}
+
+.game__section>.middle__box>.left>.top>h1>span {
+    color: var(--main);
+}
+
+.game__section>.middle__box>.left>.container {
+    background-color: var(--background_color_2);
+    margin: 1em 2em;
+    padding-top: 1em;
+    height: 80%;
+    border-radius: 12px;
+}
+
+.game__section>.middle__box>.left>.container>.message {
+    background-color: var(--footer_color);
+    margin: 1em;
+    padding: 1.5em 2em 35px;
+    border-radius: 20px;
+
+    box-shadow: 0 3px 16px #1010105e;
+}
+.game__section>.middle__box>.left>.container>.message>.author {
+    margin-bottom: 25px;
+    color: var(--background_color_2);
+    background: var(--secondary);
+    padding: 7px 11px;
+    border-radius: 8px;
+    font-family: 'montserrat-bold', sans-serif;
+}
+
+.game__section>.middle__box>.left>.container>.message>p {
+    font-size: 14px;
+    color: var(--text_color);
+    margin-top: 23px;
+}
+
+.game__section>.middle__box>.left>.container>.message>.date {
+    float: right;
+    color: var(--text_color_2);
+    font-size: 13px;
+}
+
+.game__section>.middle__box>.left>input {
+    color: white;
+    border: none;
+    padding: 15px 16px;
+    width: 84%;
+    margin: 0.5em 3em;
+    border-radius: 10px;
+    background: var(--background_color);
+
+    box-shadow: 0 3px 16px #1010105e;
+}
+/* END GAME */
 
 /* FOOTER */
 footer {

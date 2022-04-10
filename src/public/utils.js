@@ -1,3 +1,5 @@
+import parse from 'parse-duration'
+
 function verifyForm(...inputs) {
     /**
      * @description verify a form input
@@ -24,5 +26,30 @@ function verifyForm(...inputs) {
     return true
 }
 
+class Timer {
 
-export {verifyForm}
+    constructor(time) {
+        this._time = parse(time)
+        this._id = null
+    }
+
+    start(callback) {
+        this._id = setInterval(() => {
+            this._time--
+            callback(this)
+        }, 1e3)
+    }
+
+    stop() {
+        clearInterval(this._id)
+    }
+
+    toString() {
+        const minutes = Math.floor(this._time/60000),
+            seconds = ((this._time%60000)/1000).toFixed(0)
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+}
+
+export {verifyForm, Timer}
