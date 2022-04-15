@@ -1,14 +1,15 @@
 import { Component } from "react";
-
+import {  } from "../public/api";
 import {Timer} from '../public/utils';
-
-
+import Message from "./components/Message";
+import User from "./components/User";
 export default class Game extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {party: null}
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.state = {party: null, value: null, messages: []}
     }
 
     componentDidMount() {
@@ -23,8 +24,22 @@ export default class Game extends Component {
         })
     }
 
+    handleSubmit(event){
+        const messages = this.state.messages
+        messages.push({text: this.state.value, pseudo : 't', timestamp: Date()})
+        this.setState({
+            messages: messages
+        })
+        // Post message ici
+        event.preventDefault();
+    }
+
+    handleChange(event){
+        this.setState({value: event.target.value});
+    }
+
     render() {
-        const { party } = this.state
+        const { party, messages } = this.state
         if(!this.state.timer)
             return <div />
 
@@ -46,12 +61,7 @@ export default class Game extends Component {
                         </div>
 
                         <div className="users">
-                            {new Array(5).fill('').map((_,i) =>
-                                <div key={i} className="user">
-                                    <img src={require('../public/images/test.jfif')} alt="user" />
-                                    <h4>Pseudo</h4>
-                                </div>)
-                            }
+                            {new Array(5).fill('').map((_,i) => <User key={i}/>)}
                         </div>
                     </div>
                     <div className="left">
@@ -59,21 +69,11 @@ export default class Game extends Component {
                             <h1>Chat room <span>#{party}</span></h1>
                         </div>
 
-                        <div className="container">
-                            <div className="message">
-                                <span className="author">Pseudo</span>
-                                <p>Message....</p>
-                                <span className="date">envoyé à 05:41</span>
-                            </div>
-
-                            <div className="message">
-                                <span className="author">Pseudo</span>
-                                <p>Message....</p>
-                                <span className="date">envoyé à 05:41</span>
-                            </div>
-                        </div>
-
-                        <input placeholder="Envoyer un message..." />
+                        <ul className="container" id="container" style={{"overflow-y" : "scroll", height: "600px"}}>
+                            {messages.map((msg, i) => <Message message={msg.text} pseudo={msg.pseudo} timestamp={msg.timestamp} key={i}/>)}
+                        </ul>
+                        <input placeholder="Envoyer un message..." type="text" onChange={this.handleChange}/>
+                        <input type="submit" onClick={this.handleSubmit}/>
                     </div>
                 </div>
             </section>
