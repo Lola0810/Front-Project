@@ -1,321 +1,324 @@
 /* FONTS */
 @font-face {
-    src: url(./fonts/montserrat-bold.otf);
-    font-family: montserrat-bold;
+  src: url(./fonts/montserrat-bold.otf);
+  font-family: montserrat-bold;
 }
 @font-face {
-    src: url(./fonts/montserrat-medium.otf);
-    font-family: montserrat-medium;
+  src: url(./fonts/montserrat-medium.otf);
+  font-family: montserrat-medium;
 }
 @font-face {
-    src: url(./fonts/montserrat-regular.otf);
-    font-family: montserrat-regular;
+  src: url(./fonts/montserrat-regular.otf);
+  font-family: montserrat-regular;
 }
 @font-face {
-    src: url(./fonts/montserrat-thin.otf);
-    font-family: montserrat-thin;
+  src: url(./fonts/montserrat-thin.otf);
+  font-family: montserrat-thin;
 }
 /* FONTS */
 
 /* COLORS */
 :root {
-    --main: #D4E4BC;
-    --secondary: #F2BAC9;
-    --white: #F2F2F2;
-    --black: #0F0F0F;
-    --footer_color: #0C0C0C;
-    --text_color: #D8D8D8;
-    --text_color_2: #707070;
-    --background_color: #171717;
-    --background_color_2: #101010;
+  --main: #d4e4bc;
+  --secondary: #f2bac9;
+  --white: #f2f2f2;
+  --black: #0f0f0f;
+  --footer_color: #0c0c0c;
+  --text_color: #d8d8d8;
+  --text_color_2: #707070;
+  --background_color: #171717;
+  --background_color_2: #101010;
 }
 /* COLORS */
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--background_color);
+  background: var(--background_color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--main);
-    border-radius: 20px;
+  background: var(--main);
+  border-radius: 20px;
 }
 /* END SCROLLBAR */
 
 /* MAIN */
-*, *::before, *::after {
-    outline: none;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    font-family: 'montserrat-regular', sans-serif;
-    background: var(--background_color);
+html,
+body {
+  font-family: "montserrat-regular", sans-serif;
+  background: var(--background_color);
 }
 /* MAIN */
 
 /* HEADER */
 header {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    z-index: 1;
+  width: 100%;
+  z-index: 1;
 }
-header>nav {
-    text-align: center;
+header > nav {
+  text-align: center;
 }
-header>nav>ul {
-    list-style: none;
-    margin: 3em 0;
+header > nav > ul {
+  list-style: none;
+  margin: 3em 0;
 }
-header>nav>ul>a {
-    text-decoration: none;
-    margin: 38px 0px 38px 46px;
-}
-
-header>nav>ul>a:hover>li {
-    color: var(--main);
-}
-header>nav>ul>a:hover>li::before,
-header>nav>ul>a.activated>li::before {
-    width: 80%;
+header > nav > ul > a {
+  text-decoration: none;
+  margin: 38px 0px 38px 46px;
 }
 
-header>nav>ul>a.activated>li {
-    color: var(--main);
-    font-family: 'montserrat-medium', sans-serif;
+header > nav > ul > a:hover > li {
+  color: var(--main);
+}
+header > nav > ul > a:hover > li::before,
+header > nav > ul > a.activated > li::before {
+  width: 80%;
 }
 
-header>nav>ul>a>li::before {
-    content: "";
-    display: block;
-
-    position: absolute;
-    left: 11%;
-    bottom: -4px;
-
-    width: 0;
-    height: 3px;
-
-    background: var(--main);
-    border-radius: 100px;
-    transition: width 300ms ease;
+header > nav > ul > a.activated > li {
+  color: var(--main);
+  font-family: "montserrat-medium", sans-serif;
 }
 
-header>nav>ul>a>li {
-    color: var(--text_color_2);
-    transition: all .3s ease;
-    display: inline-block;
-    font-size: 23px;
-    position: relative;
-    font-family:'Segoe UI', sans-serif;
+header > nav > ul > a > li::before {
+  content: "";
+  display: block;
+
+  position: absolute;
+  left: 11%;
+  bottom: -4px;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--main);
+  border-radius: 100px;
+  transition: width 300ms ease;
+}
+
+header > nav > ul > a > li {
+  color: var(--text_color_2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 23px;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
 }
 /* HEADER */
 
 /* HOME */
-.home>.wave__1 {
-    background: url(../../public/images/home_wave_1.svg), center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.home > .wave__1 {
+  background: url(../../public/images/home_wave_1.svg), center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
-    width: 79%;
-    height: 40em;
+  width: 79%;
+  height: 40em;
 
-    position: absolute;
-    top: -190px;
-    left: -76px;
+  position: absolute;
+  top: -190px;
+  left: -76px;
 }
 
-.home>.wave__2 {
-    background: url(../../public/images/home_wave_2.svg), center;
-    background-size: cover;
+.home > .wave__2 {
+  background: url(../../public/images/home_wave_2.svg), center;
+  background-size: cover;
 
-    width: 100%;
-    height: 66em;
+  width: 100%;
+  height: 66em;
 
-    position: absolute;
-    top: 47em;
-    left: 0px;
+  position: absolute;
+  top: 47em;
+  left: 0px;
 }
 
-.home>div:not(.wave__1):not(.wave__2) {
-    position: relative;
+.home > div:not(.wave__1):not(.wave__2) {
+  position: relative;
 }
 
 .presentation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-    margin-top: 5em;
+  margin-top: 5em;
 }
 
-.presentation>.front__image {
-    background: url(../../public/images/software-engineer.svg);
-    background-size: cover;
+.presentation > .front__image {
+  background: url(../../public/images/software-engineer.svg);
+  background-size: cover;
 
-    width: 37em;
-    height: 33.5em;
+  width: 37em;
+  height: 33.5em;
 }
 
-.presentation>.left {
-    margin-right: 7em;
-    margin-top: -1em;
+.presentation > .left {
+  margin-right: 7em;
+  margin-top: -1em;
 }
 
-.presentation>.left>.title {
-    font-size: 49px;
-    color: var(--main);
-    font-family: 'montserrat-bold', sans-serif;
-    margin-bottom: 1em;
+.presentation > .left > .title {
+  font-size: 49px;
+  color: var(--main);
+  font-family: "montserrat-bold", sans-serif;
+  margin-bottom: 1em;
 }
 
-.presentation>.left>.description {
-    width: 23em;
- 
-    color: var(--text_color);
-    font-family: "montserrat-regular", sans-serif;
-    font-size: 21px;
-    font-weight: normal;
+.presentation > .left > .description {
+  width: 23em;
+
+  color: var(--text_color);
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 21px;
+  font-weight: normal;
 }
 
-.presentation>.left>button {
-    border-radius: 13px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: all .3s ease;
+.presentation > .left > button {
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
 }
 
-.presentation>.left>.create {
-    background-color: var(--main);
-    border: 2px solid var(--main);
+.presentation > .left > .create {
+  background-color: var(--main);
+  border: 2px solid var(--main);
 
-    font-family: 'montserrat-bold', sans-serif;
-    color: var(--black);
+  font-family: "montserrat-bold", sans-serif;
+  color: var(--black);
 
-    padding: 12px 31px 12px 31px;
-    margin-right: 2em;
-    margin-top: 3em;
+  padding: 12px 31px 12px 31px;
+  margin-right: 2em;
+  margin-top: 3em;
 }
 
-.presentation>.left>.create:hover {
-    background-color: #b3cb8e;
+.presentation > .left > .create:hover {
+  background-color: #b3cb8e;
 }
 
-.presentation>.left>.join {
-    border-style: solid;
-    border-color: var(--secondary);
-    background: none;
+.presentation > .left > .join {
+  border-style: solid;
+  border-color: var(--secondary);
+  background: none;
 
-    color: var(--secondary);
-    font-family: 'montserrat-medium', sans-serif;
+  color: var(--secondary);
+  font-family: "montserrat-medium", sans-serif;
 
-    padding: 12px 28px 12px 28px;
+  padding: 12px 28px 12px 28px;
 }
 
-.presentation>.left>.join:hover {
-    background: var(--secondary);
-    color: var(--black);
+.presentation > .left > .join:hover {
+  background: var(--secondary);
+  color: var(--black);
 }
 
 .goal {
-    margin-top: 46ch;
-    margin-left: 8em;
-    margin-bottom: 11em;
+  margin-top: 46ch;
+  margin-left: 8em;
+  margin-bottom: 11em;
 }
 
-.goal>.title {
-    color: var(--main);
-    font-family: 'montserrat-bold', sans-serif;
-    font-size: 42px;
+.goal > .title {
+  color: var(--main);
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 42px;
 
-    position: relative;
-    padding-bottom: 1vh;
+  position: relative;
+  padding-bottom: 1vh;
 }
 
-.goal>.title:before {
-    content: "";
-    width: 10%;
-    height: 6px;
+.goal > .title:before {
+  content: "";
+  width: 10%;
+  height: 6px;
 
-    background-color: var(--main);
-    position: absolute;
-    bottom: -7px;
-    left: 37px;
+  background-color: var(--main);
+  position: absolute;
+  bottom: -7px;
+  left: 37px;
 }
- 
-.goal>.description {
-    font-size: 20px;
-    color: var(--text_color);
-    width: min(59ch, 92%);
-    margin-top: 3em;
-    text-align: justify;
+
+.goal > .description {
+  font-size: 20px;
+  color: var(--text_color);
+  width: min(59ch, 92%);
+  margin-top: 3em;
+  text-align: justify;
 }
 
 .deeper__background {
-    background: var(--background_color_2);
-    padding: 1em;
+  background: var(--background_color_2);
+  padding: 1em;
 }
 
-.deeper__background>.field>.subtitle {
-    margin-top: 7em;
+.deeper__background > .field > .subtitle {
+  margin-top: 7em;
 }
 
-.deeper__background>.field>.subtitle>h2 {
-    background: var(--text_color_2);
-    font-family: 'montserrat-bold', sans-serif;
-    width: fit-content;
+.deeper__background > .field > .subtitle > h2 {
+  background: var(--text_color_2);
+  font-family: "montserrat-bold", sans-serif;
+  width: fit-content;
 
-    padding: 11px 24px;
-    border-radius: 12px;
-    position: relative;
+  padding: 11px 24px;
+  border-radius: 12px;
+  position: relative;
 }
 
-.deeper__background>.field>.subtitle.pink>h2 {
-    background: var(--secondary);
+.deeper__background > .field > .subtitle.pink > h2 {
+  background: var(--secondary);
 }
 
-.deeper__background>.field>.subtitle.green>h2 {
-    background: var(--main);
+.deeper__background > .field > .subtitle.green > h2 {
+  background: var(--main);
 }
 
-.deeper__background>.field>.subtitle>h2:last-child {
-    left: 23px;
-    top: -8px;
+.deeper__background > .field > .subtitle > h2:last-child {
+  left: 23px;
+  top: -8px;
 }
 
-.deeper__background>.field {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.deeper__background > .field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    position: relative;
-    margin: 7em 0;
+  position: relative;
+  margin: 7em 0;
 }
 
-.deeper__background>.field>.empty__image {
-    width: 30em;
-    height: 20em;
+.deeper__background > .field > .empty__image {
+  width: 30em;
+  height: 20em;
 
-    border-radius: 20px;
-    margin-right: 9em;
-    background-color: var(--background_color);
+  border-radius: 20px;
+  margin-right: 9em;
+  background-color: var(--background_color);
 }
 
-.deeper__background>.field:nth-child(odd) {
-    flex-direction: row-reverse;
+.deeper__background > .field:nth-child(odd) {
+  flex-direction: row-reverse;
 }
 
-.deeper__background>.field:nth-child(odd)>.empty__image {
-    margin-left: 9em;
-    margin-right: 0;
+.deeper__background > .field:nth-child(odd) > .empty__image {
+  margin-left: 9em;
+  margin-right: 0;
 }
 
 /* pour le subtitle à droite et l'image à gauche je t'engage à reprendre
@@ -325,327 +328,326 @@ la même méthode que pour la presentation (le display flex) */
 
 /* MEMBER AREA */
 .member__area {
-    display: grid;
-    justify-content: center;
-    place-items: center;
+  display: grid;
+  justify-content: center;
+  place-items: center;
 
-    height: 79vh;
+  height: 79vh;
 }
 
 .member__area > .middle__form {
-    background: var(--background_color_2);
-    box-shadow: 0 3px 16px #1010105e;
+  background: var(--background_color_2);
+  box-shadow: 0 3px 16px #1010105e;
 
-    border-radius: 16px;
-    width: 157%;
-    padding: 33px 34px 73px;
+  border-radius: 16px;
+  width: 157%;
+  padding: 33px 34px 73px;
 }
 
 .member__area > .middle__form.register {
-    width: 191%;
+  width: 191%;
 }
 
 .member__area > .middle__form > h1 {
-    color: white;
-    font-family: 'montserrat-bold', sans-serif;
-    font-size: 25px;
-    text-align: center;
+  color: white;
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 25px;
+  text-align: center;
 }
 
 .member__area > .middle__form > div > .field {
-    position: relative;
-    margin: 36px 0;
+  position: relative;
+  margin: 36px 0;
 }
 
 .member__area > .middle__form > div > .field > label {
-    text-transform: capitalize;
+  text-transform: capitalize;
 
-    position: absolute;
-    top: -10px;
-    left: 16px;
+  position: absolute;
+  top: -10px;
+  left: 16px;
 
-    transition: all .3s ease;
+  transition: all 0.3s ease;
 
-    padding: 1px 12px;
-    background-color: var(--background_color_2);
-    color: #474747;
+  padding: 1px 12px;
+  background-color: var(--background_color_2);
+  color: #474747;
 }
 
 .member__area > .middle__form > div > .field > input {
-    border: 1px solid #474747;
-    background-color: transparent;
-    color: var(--text_color_2);
+  border: 1px solid #474747;
+  background-color: transparent;
+  color: var(--text_color_2);
 
-    transition: all .3s ease;
+  transition: all 0.3s ease;
 
-    padding: 14px 15px;
-    border-radius: 10px;
-    width: 100%;
+  padding: 14px 15px;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .member__area > .middle__form > div > .field > label.error {
-    color: #f0928b;
+  color: #f0928b;
 }
 
 .member__area > .middle__form > div > .field > input.error {
-    border: 1px solid #f0928b;
-    background-color: transparent;
-    color: #f0928b;
+  border: 1px solid #f0928b;
+  background-color: transparent;
+  color: #f0928b;
 }
 
 .member__area > .middle__form > .bottom {
-    position: relative;
+  position: relative;
 }
 
 .member__area > .middle__form > .bottom > span {
-    color: #474747;
+  color: #474747;
 
-    position: absolute;
-    right: 0;
-    top: 14px;
+  position: absolute;
+  right: 0;
+  top: 14px;
 
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .member__area > .middle__form > .bottom > span > a {
-    color: white;
-    text-decoration: none;
-    transition: all .3s ease;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .member__area > .middle__form > .bottom > span > a:hover {
-    opacity: 80%;
+  opacity: 80%;
 }
 
 .member__area > .middle__form > .bottom > button {
-    border: none;
-    cursor: pointer;
-    padding: 14px 22px;
-    font-family: 'montserrat-bold', sans-serif;
-    border-radius: 11px;
-    font-size: 14px;
+  border: none;
+  cursor: pointer;
+  padding: 14px 22px;
+  font-family: "montserrat-bold", sans-serif;
+  border-radius: 11px;
+  font-size: 14px;
 
-    transition: all .3s ease;
+  transition: all 0.3s ease;
 
-    position: absolute;
-    left: 0;
+  position: absolute;
+  left: 0;
 }
 
 .member__area > .middle__form > .bottom > button:hover {
-    opacity: 80%;
+  opacity: 80%;
 }
 
 .member__area > .middle__form > .bottom > button.register {
-    background-color: var(--main);
+  background-color: var(--main);
 }
 
 .member__area > .middle__form > .bottom > button.login {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 /* END MEMBER AREA */
 
 /* GAME */
 .game__section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-items: center;
 }
 
-.game__section>.middle__box {
-    border-radius: 15px;
-    background-color: var(--background_color_2);
-    box-shadow: 0 3px 16px #1010105e;
+.game__section > .middle__box {
+  border-radius: 15px;
+  background-color: var(--background_color_2);
+  box-shadow: 0 3px 16px #1010105e;
 
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
-.game__section>.middle__box>.right {
-    position: relative;
-    padding-top: 8em;
-    width: calc(100% - 26%);
+.game__section > .middle__box > .right {
+  position: relative;
+  padding-top: 8em;
+  width: calc(100% - 26%);
 }
 
-.game__section>.middle__box>.right>.left__button {
-    padding: 13px 16px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-family: 'montserrat-bold', sans-serif;
-    background-color: transparent;
-    border: 2px solid var(--secondary);
-    color: var(--secondary);
+.game__section > .middle__box > .right > .left__button {
+  padding: 13px 16px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: "montserrat-bold", sans-serif;
+  background-color: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
 
-    cursor: pointer;
-    
-    position: absolute;
-    right: 28px;
-    top: 24px;
+  cursor: pointer;
+
+  position: absolute;
+  right: 28px;
+  top: 24px;
 }
 
-.game__section>.middle__box>.right>h1 {
-    text-align: center;
-    color: white;
-    font-size: 31px;
-    font-family: 'montserrat-thin', sans-serif;
+.game__section > .middle__box > .right > h1 {
+  text-align: center;
+  color: white;
+  font-size: 31px;
+  font-family: "montserrat-thin", sans-serif;
 }
 
-.game__section>.middle__box>.right>h1>span {
-    font-family: 'montserrat-bold', sans-serif;
+.game__section > .middle__box > .right > h1 > span {
+  font-family: "montserrat-bold", sans-serif;
 }
 
-.game__section>.middle__box>.right>.middle {
-    margin: 3em 0;
-    text-align: center;
-
+.game__section > .middle__box > .right > .middle {
+  margin: 3em 0;
+  text-align: center;
 }
 
-.game__section>.middle__box>.right>.middle>button {
-    padding: 16px 21px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-family: 'montserrat-bold', sans-serif;
+.game__section > .middle__box > .right > .middle > button {
+  padding: 16px 21px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: "montserrat-bold", sans-serif;
 
-    border: none;
-    background-color: var(--main);
-    color: var(--background_color_2);
+  border: none;
+  background-color: var(--main);
+  color: var(--background_color_2);
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.game__section>.middle__box>.right>.users {
-    display: flex;
-    flex-wrap: wrap;
+.game__section > .middle__box > .right > .users {
+  display: flex;
+  flex-wrap: wrap;
 
-    margin: -13px 6em 18px;
+  margin: -13px 6em 18px;
 }
 
-.game__section>.middle__box>.right>.users>.user {
-    margin: 1em 2em;
+.game__section > .middle__box > .right > .users > .user {
+  margin: 1em 2em;
 }
 
-.game__section>.middle__box>.right>.users>.user>img {
-    width: 200px;
-    border-radius: 20px;
-    box-shadow: 0 3px 16px #1010105e;
+.game__section > .middle__box > .right > .users > .user > img {
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 3px 16px #1010105e;
 }
 
-.game__section>.middle__box>.right>.users>.user>h4 {
-    text-align: center;
-    margin-top: 8px;
-    color: var(--text_color);
-    font-family: 'montserrat-thin', sans-serif;
+.game__section > .middle__box > .right > .users > .user > h4 {
+  text-align: center;
+  margin-top: 8px;
+  color: var(--text_color);
+  font-family: "montserrat-thin", sans-serif;
 }
 
-.game__section>.middle__box>.left {
-    background-color: var(--footer_color);
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    width: 26%;
+.game__section > .middle__box > .left {
+  background-color: var(--footer_color);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 26%;
 
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
 
-.game__section>.middle__box>.left>.top {
-    margin: 2em;
+.game__section > .middle__box > .left > .top {
+  margin: 2em;
 }
 
-.game__section>.middle__box>.left>.top>h1 {
-    color: white;
-    font-family: 'montserrat-bold', sans-serif;
+.game__section > .middle__box > .left > .top > h1 {
+  color: white;
+  font-family: "montserrat-bold", sans-serif;
 }
 
-.game__section>.middle__box>.left>.top>h1>span {
-    color: var(--main);
+.game__section > .middle__box > .left > .top > h1 > span {
+  color: var(--main);
 }
 
-.game__section>.middle__box>.left>.container {
-    background-color: var(--background_color_2);
-    margin: 1em 2em;
-    padding-top: 1em;
-    height: 80%;
-    border-radius: 12px;
+.game__section > .middle__box > .left > .container {
+  background-color: var(--background_color_2);
+  margin: 1em 2em;
+  padding-top: 1em;
+  height: 80%;
+  border-radius: 12px;
 }
 
-.game__section>.middle__box>.left>.container>.message {
-    background-color: var(--footer_color);
-    margin: 1em;
-    padding: 1.5em 2em 35px;
-    border-radius: 20px;
+.game__section > .middle__box > .left > .container > .message {
+  background-color: var(--footer_color);
+  margin: 1em;
+  padding: 1.5em 2em 35px;
+  border-radius: 20px;
 
-    box-shadow: 0 3px 16px #1010105e;
+  box-shadow: 0 3px 16px #1010105e;
 }
-.game__section>.middle__box>.left>.container>.message>.author {
-    margin-bottom: 25px;
-    color: var(--background_color_2);
-    background: var(--secondary);
-    padding: 7px 11px;
-    border-radius: 8px;
-    font-family: 'montserrat-bold', sans-serif;
-}
-
-.game__section>.middle__box>.left>.container>.message>p {
-    font-size: 14px;
-    color: var(--text_color);
-    margin-top: 23px;
+.game__section > .middle__box > .left > .container > .message > .author {
+  margin-bottom: 25px;
+  color: var(--background_color_2);
+  background: var(--secondary);
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-family: "montserrat-bold", sans-serif;
 }
 
-.game__section>.middle__box>.left>.container>.message>.date {
-    float: right;
-    color: var(--text_color_2);
-    font-size: 13px;
+.game__section > .middle__box > .left > .container > .message > p {
+  font-size: 14px;
+  color: var(--text_color);
+  margin-top: 23px;
 }
 
-.game__section>.middle__box>.left>input {
-    color: white;
-    border: none;
-    padding: 15px 16px;
-    width: 84%;
-    margin: 0.5em 3em;
-    border-radius: 10px;
-    background: var(--background_color);
+.game__section > .middle__box > .left > .container > .message > .date {
+  float: right;
+  color: var(--text_color_2);
+  font-size: 13px;
+}
 
-    box-shadow: 0 3px 16px #1010105e;
+.game__section > .middle__box > .left > input {
+  color: white;
+  border: none;
+  padding: 15px 16px;
+  width: 84%;
+  margin: 0.5em 3em;
+  border-radius: 10px;
+  background: var(--background_color);
+
+  box-shadow: 0 3px 16px #1010105e;
 }
 /* END GAME */
 
 /* FOOTER */
 footer {
-    background-color: var(--footer_color);
-    font-size: 16px;
-    font-family: 'montserrat-medium', sans-serif;
-    color: var(--text_color);
+  background-color: var(--footer_color);
+  font-size: 16px;
+  font-family: "montserrat-medium", sans-serif;
+  color: var(--text_color);
 
-    padding: 28px 10px;
-    text-align: center;
+  padding: 28px 10px;
+  text-align: center;
 }
 /* FOOTER */
 
 /* RESPONSIVE */
 @media screen and (max-width: 1205px) {
-    .presentation>.left {
-        margin-right: unset;
-    }
+  .presentation > .left {
+    margin-right: unset;
+  }
 }
 @media screen and (max-width: 1091px) {
-    .presentation {
-        margin-top: 8em;
-    }
-    .presentation>.front__image {
-        margin-top: 6em;
-    }
-    .home>.wave__2 {
-        top: 69em;
-    }
-    .goal {
-        margin-top: 32ch;
-    }
+  .presentation {
+    margin-top: 8em;
+  }
+  .presentation > .front__image {
+    margin-top: 6em;
+  }
+  .home > .wave__2 {
+    top: 69em;
+  }
+  .goal {
+    margin-top: 32ch;
+  }
 }
 @media screen and (max-width: 991px) {
-    .goal {
-        margin-left: 3em;
-    }
+  .goal {
+    margin-left: 3em;
+  }
 }
 /* END RESPONSIVE */

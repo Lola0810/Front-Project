@@ -35,8 +35,8 @@ export default class Register extends Component {
 
   render() {
     return this.state.sucesss ? (
-        <Navigate replace to="/" />
-      ) : (
+      <Navigate to="/" />
+    ) : (
       <section className="member__area">
         <div className="middle__form register">
           <h1>Inscrivez-vous</h1>

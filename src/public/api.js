@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "http://localhost:4001/api/v1",
   headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 });
 
@@ -15,8 +15,9 @@ const CHAT = "chat";
 /* TOKEN */
 const storeUserToken = (userToken) => localStorage.setItem("token", userToken);
 const getUserToken = () => localStorage.getItem("token");
+const deleteUserToken = () => localStorage.removeItem("token");
 const changeToken = () =>
-  (api.defaults.headers.post["Authorisation"] = `Bearer ${getUserToken()}`);
+  (api.defaults.headers["authorization"] = `Bearer ${getUserToken()}`);
 
 /* USER */
 const getUserMe = () => api.get(`${USER}/@me`);
@@ -28,10 +29,17 @@ const siginUser = ({ username, password, email }) =>
 const leaderboardUser = (type) => api.get(`${USER}/leaderboard/${type}`);
 
 /* ROOM */
-const createRoom = ({maxUsers=null, privateRoom=null, password=null, tags=null}) => api.post(`${ROOM}/create`, {maxUsers, privateRoom, password, tags});
-const joinRoom = ({password=null, id}) => api.post(`${ROOM}/join/${id}`, {password, id});
+const createRoom = ({
+  maxUsers = null,
+  privateRoom = null,
+  password = null,
+  tags = null,
+}) => api.post(`${ROOM}/create`, { maxUsers, privateRoom, password, tags });
+const joinRoom = ({ password = null, id }) =>
+  api.post(`${ROOM}/join/${id}`, { password, id });
 const getPublicRooms = () => api.get(`${ROOM}/public`);
 const getMyRoom = () => api.get(`${ROOM}/@me`);
+const getRoom = (id) => api.get(`${ROOM}/get/${id}`);
 const leaveRoom = () => api.post(`${ROOM}/leave`);
 
 /* CHAT */
@@ -41,6 +49,7 @@ export {
   storeUserToken,
   getUserToken,
   changeToken,
+  deleteUserToken,
   getUserMe,
   getUserData,
   loginUser,
@@ -49,9 +58,9 @@ export {
   createRoom,
   joinRoom,
   getMyRoom,
+  getRoom,
   getPublicRooms,
   leaveRoom,
   sendMessage,
-  
   api,
 };
