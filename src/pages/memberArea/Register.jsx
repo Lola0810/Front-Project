@@ -15,19 +15,17 @@ export default class Register extends Component {
 
   _submitForm() {
     const fieldsId = ["username", "email", "password", "cpassword"];
-    if (verifyForm(...fieldsId.map((id) => document.getElementById(id)))) {
-      const fields = Object.fromEntries(
-        fieldsId.map((id) => [id, document.getElementById(id).value])
-      );
+    if (verifyForm(...fieldsId.map(id => document.getElementById(id)))) {
+      const fields = Object.fromEntries(fieldsId.map(id => [id, document.getElementById(id).value]));
       siginUser(fields)
-        .then((res) => {
+        .then(res => {
           storeUserToken(res.data.token);
           changeToken();
           this.setState({
             sucesss: true,
           });
         })
-        .catch((e) => {
+        .catch(e => {
           alert(e);
         });
     }
@@ -45,11 +43,7 @@ export default class Register extends Component {
             <FormField tag="pseudo" id="username" type="text" />
             <FormField tag="email" id="email" type="email" />
             <FormField tag="mot de passe" id="password" type="password" />
-            <FormField
-              tag="mot de passe (à nouveau)"
-              id="cpassword"
-              type="password"
-            />
+            <FormField tag="mot de passe (à nouveau)" id="cpassword" type="password" />
           </div>
 
           <div className="bottom">

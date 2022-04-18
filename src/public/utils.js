@@ -11,13 +11,13 @@ function verifyForm(...inputs) {
   const ERROR_CLASS = "error";
   const getLabelById = ({ id }) => document.querySelector(`[for="${id}"]`);
 
-  inputs.forEach((input) => {
+  inputs.forEach(input => {
     getLabelById(input).classList.remove(ERROR_CLASS);
     input.classList.remove(ERROR_CLASS);
   });
 
   if (rightInputs.length < inputs.length) {
-    wrongInputs.forEach((input) => {
+    wrongInputs.forEach(input => {
       getLabelById(input).classList.add(ERROR_CLASS);
       input.classList.add(ERROR_CLASS);
     });

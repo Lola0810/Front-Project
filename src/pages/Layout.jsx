@@ -34,7 +34,7 @@ export default class Layout extends Component {
       return this.setState({ set: true });
     }
     getUserMe()
-      .then((res) => this.setState({ user: res.data, set: true }))
+      .then(res => this.setState({ user: res.data, set: true }))
       .catch(() => {
         this.setState({ set: true });
       });
@@ -52,51 +52,12 @@ export default class Layout extends Component {
             <Route exact path="/" element={<Home user={this.state.user} />} />
 
             <Route path="/connexion" element={<Login />} />
-            <Route
-              path="/create"
-              element={
-                this.state.set ? (
-                  this.state.user ? (
-                    <Create user={this.state.user} />
-                  ) : (
-                    <Login />
-                  )
-                ) : (
-                  <Wait />
-                )
-              }
-            />
-            <Route
-              path="/join"
-              element={
-                this.state.set ? (
-                  this.state.user ? (
-                    <Join user={this.state.user} />
-                  ) : (
-                    <Login />
-                  )
-                ) : (
-                  <Wait />
-                )
-              }
-            />
+            <Route path="/create" element={this.state.set ? this.state.user ? <Create user={this.state.user} /> : <Login /> : <Wait />} />
+            <Route path="/join" element={this.state.set ? this.state.user ? <Join user={this.state.user} /> : <Login /> : <Wait />} />
             <Route path="/inscription" element={<Register />} />
             <Route path="/deconnexion" element={<Logout />} />
 
-            <Route
-              path="/:id"
-              element={
-                this.state.set ? (
-                  this.state.user ? (
-                    <Game user={this.state.user} />
-                  ) : (
-                    <Login />
-                  )
-                ) : (
-                  <Wait />
-                )
-              }
-            />
+            <Route path="/:id" element={this.state.set ? this.state.user ? <Game user={this.state.user} /> : <Login /> : <Wait />} />
 
             <Route path="*" element={<NF />} />
           </Routes>

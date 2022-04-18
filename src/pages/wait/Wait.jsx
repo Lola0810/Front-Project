@@ -1,5 +1,8 @@
 import { Component } from "react";
 
+/**
+ * Page d'attente
+ */
 export default class NF extends Component {
   render() {
     return (

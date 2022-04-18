@@ -16,19 +16,17 @@ export default class Login extends Component {
   _submitForm() {
     const fieldsId = ["username", "password"];
 
-    if (verifyForm(...fieldsId.map((id) => document.getElementById(id)))) {
-      const fields = Object.fromEntries(
-        fieldsId.map((id) => [id, document.getElementById(id).value])
-      );
+    if (verifyForm(...fieldsId.map(id => document.getElementById(id)))) {
+      const fields = Object.fromEntries(fieldsId.map(id => [id, document.getElementById(id).value]));
       loginUser(fields)
-        .then((res) => {
+        .then(res => {
           storeUserToken(res.data.token);
           changeToken();
           this.setState({
             sucesss: true,
           });
         })
-        .catch((e) => {
+        .catch(e => {
           alert(e);
         });
     }

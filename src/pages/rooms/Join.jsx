@@ -17,11 +17,9 @@ export default class Login extends Component {
   _submitForm() {
     const fieldsId = ["id"];
 
-    if (verifyForm(...fieldsId.map((id) => document.getElementById(id)))) {
+    if (verifyForm(...fieldsId.map(id => document.getElementById(id)))) {
       fieldsId.push("password");
-      const fields = Object.fromEntries(
-        fieldsId.map((id) => [id, document.getElementById(id).value])
-      );
+      const fields = Object.fromEntries(fieldsId.map(id => [id, document.getElementById(id).value]));
       joinRoom(fields)
         .then(() => {
           this.setState({
@@ -29,14 +27,14 @@ export default class Login extends Component {
             id: fields.id,
           });
         })
-        .catch((e) => {
+        .catch(e => {
           alert(e);
         });
     }
   }
 
   componentDidMount() {
-    getMyRoom().then((a) => {
+    getMyRoom().then(a => {
       this.setState({
         sucesss: a.data ? true : false,
         id: a.data ? a.data.id : null,
@@ -62,8 +60,7 @@ export default class Login extends Component {
               Rejoindre
             </button>
             <span>
-              Tu veux créer une partie ?{" "}
-              <Link to="/create">Créer-en une !</Link>
+              Tu veux créer une partie ? <Link to="/create">Créer-en une !</Link>
             </span>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default class Login extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({timer: true})
-    }, 5000)
+      this.setState({ timer: true });
+    }, 5000);
   }
 }

@@ -27,10 +27,8 @@ export default class Home extends Component {
           <div className="left">
             <h1 className="title">CLASH OF CODE</h1>
             <h2 className="description">
-              Amuse toi avec tes amis, créer des parties en local et invite tous
-              tes amis. <br />
-              Jouable de n'importe où avec une connexion ! Surtout en cours de
-              Philosophie.
+              Amuse toi avec tes amis, créer des parties en local et invite tous tes amis. <br />
+              Jouable de n'importe où avec une connexion ! Surtout en cours de Philosophie.
             </h2>
 
             <button className="create" onClick={this.handleButton} id="create">
@@ -47,15 +45,9 @@ export default class Home extends Component {
           <h1 className="title">Quel est le but du jeu ?</h1>
 
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            maximus ex ac nunc mollis lobortis. Aenean sollicitudin lectus
-            ligula. Vivamus venenatis sed ipsum at tristique. Ut varius arcu
-            eget diam aliquam suscipit. Vivamus ut purus viverra, pellentesque
-            arcu fermentum, pulvinar nunc. Sed consequat nisl in tristique
-            finibus. In varius tellus in diam accumsan mattis. Curabitur
-            venenatis ut augue et laoreet. Ut mollis pellentesque sem, vitae
-            ullamcorper orci tempor at. Donec non mauris non lacus fringilla
-            ornare quis eget augue.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ex ac nunc mollis lobortis. Aenean sollicitudin lectus ligula. Vivamus venenatis sed ipsum at tristique. Ut varius
+            arcu eget diam aliquam suscipit. Vivamus ut purus viverra, pellentesque arcu fermentum, pulvinar nunc. Sed consequat nisl in tristique finibus. In varius tellus in diam accumsan mattis.
+            Curabitur venenatis ut augue et laoreet. Ut mollis pellentesque sem, vitae ullamcorper orci tempor at. Donec non mauris non lacus fringilla ornare quis eget augue.
           </p>
         </div>
 

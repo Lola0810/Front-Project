@@ -15,17 +15,15 @@ export default class Login extends Component {
   _submitForm() {
     const fieldsId = ["maxUsers", "privateRoom", "password"];
 
-    const fields = Object.fromEntries(
-      fieldsId.map((id) => [id, document.getElementById(id).value])
-    );
+    const fields = Object.fromEntries(fieldsId.map(id => [id, document.getElementById(id).value]));
     createRoom(fields)
-      .then((res) => {
+      .then(res => {
         this.setState({
           sucesss: true,
           roomID: res.data.id,
         });
       })
-      .catch((e) => {
+      .catch(e => {
         alert(e);
       });
   }
@@ -40,10 +38,7 @@ export default class Login extends Component {
 
           <div>
             <FormField tag="Privé ?" id="privateRoom" type="checkbox" />
-            <FormField
-              tag="Nombre utilisateurs (Pas obligatoire)"
-              id="maxUsers"
-            />
+            <FormField tag="Nombre utilisateurs (Pas obligatoire)" id="maxUsers" />
             <FormField tag="Mot de passe ? (Pas obligatoire)" id="password" />
           </div>
 
@@ -52,8 +47,7 @@ export default class Login extends Component {
               Créer
             </button>
             <span>
-              Tu veux rejoindre une partie ?{" "}
-              <Link to="/join">Rejoins-en une !</Link>
+              Tu veux rejoindre une partie ? <Link to="/join">Rejoins-en une !</Link>
             </span>
           </div>
         </div>
