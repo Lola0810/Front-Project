@@ -4,7 +4,7 @@ export default function NavBar() {
     return (
         <nav>
             <ul>
-              <Link className="activated" to="/">
+              <Link to="/">
                 <li>Accueil</li>
               </Link>
               <Link to="/regles">

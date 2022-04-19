@@ -12,10 +12,13 @@ export default class Home extends Component {
                     <div className="left">
                         <h1 className="title">CLASH OF CODE</h1>
                         <h2 className="description">
-                            Amuse toi avec tes amis, créer des parties en local et
-                            invite tous tes amis. <br />
-                            Jouable de n'importe où avec une connexion ! Surtout 
-                            en cours de Philosophie.
+                            Amusez-vous avec vos amis en codant tout plein de
+                            fonctions, des plus faciles aux plus dures !
+                        <br />
+                        Créez des parties et invitez tous vos amis pour 
+                        s'améliorer en programmation tout en
+                        s'amusant !
+
                         </h2>
 
                         <button className="create">Créer</button>
@@ -27,13 +30,16 @@ export default class Home extends Component {
                 <div className="goal">
                     <h1 className="title">Quel est le but du jeu ?</h1>
 
-                    <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Duis maximus ex ac nunc mollis lobortis. Aenean sollicitudin lectus ligula.
-                    Vivamus venenatis sed ipsum at tristique. Ut varius arcu eget diam aliquam suscipit. 
-                    Vivamus ut purus viverra, pellentesque arcu fermentum, pulvinar nunc. 
-                    Sed consequat nisl in tristique finibus. In varius tellus in diam accumsan mattis. 
-                    Curabitur venenatis ut augue et laoreet. Ut mollis pellentesque sem, vitae ullamcorper orci tempor at.
-                    Donec non mauris non lacus fringilla ornare quis eget augue.</p>
+                    <p className="description">Clash of code est un jeu compétitif dans lequel l'objectif de chaque joueur
+                        est de finir de programmer les fonctions demandées. 
+                    <br />
+                        Vous devez être le premier à finir de programmer toutes les fonctions avant vos adversaires !
+                    <br />
+                        Le plus vite les fonctions seront faites et le plus rapidement vous pourrez
+                        les finir avant vos adversaires.
+                    <br />
+                        Soyez le mieux classé pour prouver votre niveau et rétamer vos adversaires.
+                    </p>
                 </div>
                 
                 

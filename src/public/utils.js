@@ -33,6 +33,10 @@ class Timer {
         this._id = null
     }
 
+    setTime(time) {
+        this._time = parse(time)
+    }
+
     start(callback) {
         this._id = setInterval(() => {
             this._time--
