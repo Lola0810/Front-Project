@@ -3,13 +3,22 @@ import { HashLink as Link } from "react-router-hash-link";
 import { Navigate } from "react-router-dom";
 
 import FormField from "../components/FormField";
-import { createRoom } from "../../public/api";
+import { createRoom, getMyRoom } from "../../public/api";
 
-export default class Login extends Component {
+export default class Create extends Component {
   constructor(props) {
     super(props);
     this._submitForm = this._submitForm.bind(this);
     this.state = { success: false, roomID: null };
+  }
+
+  componentDidMount(){
+    getMyRoom().then(a => {
+      this.setState({
+        sucesss: a.data ? true : false,
+        id: a.data ? a.data.id : null,
+      });
+    });
   }
 
   _submitForm() {
@@ -30,7 +39,7 @@ export default class Login extends Component {
 
   render() {
     return this.state.sucesss && this.state.roomID ? (
-      <Navigate to={"/" + this.state.roomID} />
+      <Navigate to={"/partie/" + this.state.roomID} />
     ) : (
       <section className="member__area">
         <div className="middle__form login">

@@ -44,7 +44,7 @@ export default class Login extends Component {
 
   render() {
     return this.state.sucesss && this.state.id ? (
-      <Navigate to={"/" + this.state.id} />
+      <Navigate to={"/partie/" + this.state.id} />
     ) : (
       <section className="member__area">
         <div className="middle__form login">

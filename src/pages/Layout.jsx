@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 
 // routes
 import Home from "./Home";
-import Game from "./Game";
 import NF from "./NF/NotFound";
 import Wait from "./wait/Wait";
 import Party from './party/Party';
@@ -54,15 +53,13 @@ export default class Layout extends Component {
             <Route exact path="/" element={<Home user={this.state.user} />} />
             <Route path="/regles" element={<Rules />} />
 
-            <Route path="/partie/:id" element={<Party />} />
+            <Route path="/partie/:id" element={this.state.set ? this.state.user ? <Party user={this.state.user} /> : <Login /> : <Wait />} />
 
             <Route path="/connexion" element={<Login />} />
             <Route path="/create" element={this.state.set ? this.state.user ? <Create user={this.state.user} /> : <Login /> : <Wait />} />
             <Route path="/join" element={this.state.set ? this.state.user ? <Join user={this.state.user} /> : <Login /> : <Wait />} />
             <Route path="/inscription" element={<Register />} />
             <Route path="/deconnexion" element={<Logout />} />
-
-            <Route path="/:id" element={this.state.set ? this.state.user ? <Game user={this.state.user} /> : <Login /> : <Wait />} />
 
             <Route path="*" element={<NF />} />
           </Routes>

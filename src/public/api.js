@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:4001/api/v1",
+  baseURL: "https://thumus.eu:3000/api/",
   headers: {
     authorization: `Bearer ${localStorage.getItem("token")}`,
   },

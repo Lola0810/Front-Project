@@ -3,7 +3,7 @@ import { Component } from "react";
 import Error from '../components/Error';
 
 export default class Game extends Component {
-
+    /* Refaire tout pour se baser que sur le server → Orienté server */
     constructor(props) {
         super(props)
 

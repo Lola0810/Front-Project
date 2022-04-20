@@ -1,9 +1,22 @@
 import { Component } from "react";
+import { Navigate } from "react-router-dom";
 
 export default class Home extends Component {
-
+  constructor(props) {
+    super(props);
+    this.handleButton = this.handleButton.bind(this);
+    this.state = { redirect: false };
+  }
+  handleButton(e) {
+    this.setState({
+      redirect: true,
+      func: e.target.id,
+    });
+  }
     render() {
-        return (
+      return this.state.redirect ? (
+        <Navigate to={"/" + this.state.func}></Navigate>
+      ) : (
             <section className="home">
                 <div className="wave__1" />
                 <div className="wave__2" />
@@ -21,8 +34,8 @@ export default class Home extends Component {
 
                         </h2>
 
-                        <button className="create">Créer</button>
-                        <button className="join">Rejoindre</button>
+                        <button className="create" onClick={this.handleButton} id="create">Créer</button>
+                        <button className="join" onClick={this.handleButton} id="join">Rejoindre</button>
                     </div>
                     <div className="front__image" />
                 </div>
