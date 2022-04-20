@@ -27,27 +27,33 @@ function verifyForm(...inputs) {
 }
 
 class Timer {
-  constructor(time) {
-    this._time = parse(time);
-    this._id = null;
-  }
 
-  start(callback) {
-    this._id = setInterval(() => {
-      this._time--;
-      callback(this);
-    }, 1e3);
-  }
+    constructor(time) {
+        this._time = parse(time)
+        this._id = null
+    }
 
-  stop() {
-    clearInterval(this._id);
-  }
+    setTime(time) {
+        this._time = parse(time)
+    }
 
-  toString() {
-    const minutes = Math.floor(this._time / 60000),
-      seconds = ((this._time % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
+    start(callback) {
+        this._id = setInterval(() => {
+            this._time--
+            callback(this)
+        }, 1e3)
+    }
+
+    stop() {
+        clearInterval(this._id)
+    }
+
+    toString() {
+        const minutes = Math.floor(this._time/60000),
+            seconds = ((this._time%60000)/1000).toFixed(0)
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
 }
 
 export { verifyForm, Timer };

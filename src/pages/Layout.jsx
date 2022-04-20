@@ -8,6 +8,8 @@ import Home from "./Home";
 import Game from "./Game";
 import NF from "./NF/NotFound";
 import Wait from "./wait/Wait";
+import Party from './party/Party';
+import Rules from './Rules';
 
 // member area
 import Login from "./memberArea/Login";
@@ -50,6 +52,9 @@ export default class Layout extends Component {
         <main>
           <Routes>
             <Route exact path="/" element={<Home user={this.state.user} />} />
+            <Route path="/regles" element={<Rules />} />
+
+            <Route path="/partie/:id" element={<Party />} />
 
             <Route path="/connexion" element={<Login />} />
             <Route path="/create" element={this.state.set ? this.state.user ? <Create user={this.state.user} /> : <Login /> : <Wait />} />
