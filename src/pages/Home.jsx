@@ -7,6 +7,7 @@ export default class Home extends Component {
     this.handleButton = this.handleButton.bind(this);
     this.state = { redirect: false };
   }
+  
   handleButton(e) {
     this.setState({
       redirect: true,

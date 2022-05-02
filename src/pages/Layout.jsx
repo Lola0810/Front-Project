@@ -5,10 +5,8 @@ import NavBar from "./components/NavBar";
 
 // routes
 import Home from "./Home";
-import NF from "./NF/NotFound";
-import Wait from "./wait/Wait";
-import Party from './party/Party';
-import Rules from './Rules';
+import Party from "./party/Party";
+import Rules from "./Rules";
 
 // member area
 import Login from "./memberArea/Login";
@@ -18,29 +16,12 @@ import Register from "./memberArea/Register";
 // rooms
 import Create from "./rooms/Create";
 import Join from "./rooms/Join";
+import Error from "./components/Error";
 
 // login
-import { getUserMe, getUserToken } from "../public/api";
+import L from "./L";
 
 export default class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { user: null, set: false };
-  }
-
-  componentDidMount() {
-    const token = getUserToken();
-    console.log(token);
-    if (!token) {
-      return this.setState({ set: true });
-    }
-    getUserMe()
-      .then(res => this.setState({ user: res.data, set: true }))
-      .catch(() => {
-        this.setState({ set: true });
-      });
-  }
-
   render() {
     return (
       <Router>
@@ -50,18 +31,28 @@ export default class Layout extends Component {
 
         <main>
           <Routes>
-            <Route exact path="/" element={<Home user={this.state.user} />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/regles" element={<Rules />} />
 
-            <Route path="/partie/:id" element={this.state.set ? this.state.user ? <Party user={this.state.user} /> : <Login /> : <Wait />} />
+            <Route path="/partie/:id" element={<L />}>
+              <Route path="/partie/:id" element={<Party />} />
+            </Route>
 
             <Route path="/connexion" element={<Login />} />
-            <Route path="/create" element={this.state.set ? this.state.user ? <Create user={this.state.user} /> : <Login /> : <Wait />} />
-            <Route path="/join" element={this.state.set ? this.state.user ? <Join user={this.state.user} /> : <Login /> : <Wait />} />
+
+
+            <Route path="/create" element={<L />}>
+              <Route path="/create" element={<Create />} />
+            </Route>
+
+            <Route path="/join" element={<L />}>
+              <Route path="/join" element={<Join />} />
+            </Route>
+
             <Route path="/inscription" element={<Register />} />
             <Route path="/deconnexion" element={<Logout />} />
 
-            <Route path="*" element={<NF />} />
+            <Route path="*" element={<Error code="404" />} />
           </Routes>
         </main>
 

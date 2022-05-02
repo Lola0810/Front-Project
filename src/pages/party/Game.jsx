@@ -32,13 +32,13 @@ export default class Game extends Component {
     }
 
     _testFunction() {
-        const { awnser } = this._getFunction()
+        const { answer } = this._getFunction()
         let { textContent } = document.querySelector('.coding__area')
         textContent = textContent.trim() // le code
         if(textContent.length === 0)
             return this._setError(true)
         this.setState({ Afunction: this.state.Afunction+1 })
-        if(awnser === textContent) {
+        if(answer === textContent) {
             this._setError()
             console.log('code bon !')
             return

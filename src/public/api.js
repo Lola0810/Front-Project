@@ -10,7 +10,7 @@ const api = axios.create({
 /* TYPES */
 const USER = "user";
 const ROOM = "room";
-const CHAT = "chat";
+const GAME = "game";
 
 /* TOKEN */
 const storeUserToken = userToken => localStorage.setItem("token", userToken);
@@ -33,8 +33,11 @@ const getMyRoom = () => api.get(`${ROOM}/@me`);
 const getRoom = id => api.get(`${ROOM}/get/${id}`);
 const leaveRoom = () => api.post(`${ROOM}/leave`);
 
-/* CHAT */
-const sendMessage = message => api.post(`${CHAT}/create`, { message }); // faut que je l'implémente mdrr
+/* GAME */
+const getFunction = () => api.get(`${GAME}/get`);
+const sendFunction = () => api.post(`${GAME}/post`);
+const leaderboardGame = () => api.post(`${GAME}/yaR`);
+
 
 export {
   storeUserToken,
@@ -52,6 +55,5 @@ export {
   getRoom,
   getPublicRooms,
   leaveRoom,
-  sendMessage,
   api,
 };
