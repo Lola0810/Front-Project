@@ -27,25 +27,20 @@ export default class Game extends Component {
         this.setState({ hasError: error })
     }
 
-    _getFunction() {
-        return this.state.party.functions[this.state.Afunction]
-    }
-
-    _testFunction() {
-        const { answer } = this._getFunction()
+    _testFunction() {/*
         let { textContent } = document.querySelector('.coding__area')
         textContent = textContent.trim() // le code
         if(textContent.length === 0)
             return this._setError(true)
         this.setState({ Afunction: this.state.Afunction+1 })
-        if(answer === textContent) {
+        /*if(answer === textContent) {
             this._setError()
             console.log('code bon !')
             return
         }
 
         this._setError(true)
-        console.log('code pas bon..')
+        console.log('code pas bon..')*/
     }
 
     render() {

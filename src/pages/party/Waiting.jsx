@@ -57,7 +57,7 @@ export default class Waiting extends Component {
   }
 
   handleQuit() {
-    if (window.confirm("Saucisse")) {
+    if (window.confirm("Tu veux vraiment quitter ?")) {
       leaveRoom();
       this.setState({
         quit: true,
@@ -113,7 +113,7 @@ export default class Waiting extends Component {
             </div>
 
             <ul className="container" id="container" style={{ overflowY: "scroll", height: "600px" }}>
-              {this.state.room?.owner === this.user.id ? this.messageOwner() : ""}
+              {this.state.room?.owner === this.state?.user.id ? this.messageOwner() : ""}
               {messages.map((msg, i) => (
                 <Message message={msg.text} pseudo={msg.pseudo} timestamp={msg.timestamp} key={i} />
               ))}

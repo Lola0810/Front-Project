@@ -4,41 +4,41 @@ import Error from '../components/Error';
 
 import Waiting from "./Waiting";
 import Game from './Game';
+import { getRoom } from "../../public/api";
 
 export default class Party extends Component {
 
     constructor(props) {
         super(props)
 
-        this.state = {party: null}
+        this.state = {inGame: null}
     }
 
     componentDidMount() {
         const id = window.location.pathname.replace('/partie/', '')
-        this.setState({
-            party: {
-                id: +id,
-                state: 'IN_GAME',
-                functions: [{
-                    instruction: 'zizi caca',
-                    awnser: '10 10 10'
-                }]
-            }
+        getRoom(id).then(a => {
+            this.setState({
+                inGame: a.data.inGame
+            });
+        }).catch(b => {
+            this.setState({
+                inGame: "none"
+            })
         })
     }
 
 
     render() {
-        const party = this.state.party
-        if(!party)
+        const inGame = this.state
+        if(typeof inGame !== "boolean" && inGame !== "none")
             return <div />
         let render;
-        switch(party.state) {
-            case 'WAITING':
-                render = <Waiting data={party} />
+        switch(inGame) {
+            case false:
+                render = <Waiting/>
                 break;
-            case 'IN_GAME':
-                render = <Game data={party} />
+            case true:
+                render = <Game/>
                 break;
             default:
                 render = <Error code="404" message="Aucune partie trouvé" />

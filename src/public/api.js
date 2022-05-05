@@ -1,7 +1,9 @@
+/* L'intégration de l'api */
+
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://thumus.eu:3000/api/",
+  baseURL: "http://localhost:3000/api/",
   headers: {
     authorization: `Bearer ${localStorage.getItem("token")}`,
   },
@@ -35,8 +37,7 @@ const leaveRoom = () => api.post(`${ROOM}/leave`);
 
 /* GAME */
 const getFunction = () => api.get(`${GAME}/get`);
-const sendFunction = () => api.post(`${GAME}/post`);
-const leaderboardGame = () => api.post(`${GAME}/yaR`);
+const sendFunction = (func) => api.post(`${GAME}/post`, {func});
 
 
 export {
